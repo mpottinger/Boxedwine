@@ -135,3 +135,10 @@ filesystem. `dogz2-menu-test.exe` needs no game assets. `dogz2-audio-test.exe`
 needs the restored codec in system32; it loads that module and registers its
 DriverProc locally for the test. Successful runs print MENU REGRESSION PASS
 and ACM REGRESSION PASS respectively.
+
+A later restart while the automation tab was hidden reported Wine's generic
+"explorer process failed to start" desktop-driver warning. Both explorer.exe.so
+and winex11.drv.so are present. A repeated run with the tab held visible passed
+that startup stage. Keep the tab visible during startup. Browser throttling is
+an inference from that comparison, not a recovered additional Wine defect;
+no speculative driver patch was added for it.
