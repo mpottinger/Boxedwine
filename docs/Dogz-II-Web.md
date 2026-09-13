@@ -170,3 +170,22 @@ Those input observations are not established Wine defects and prompted no patch.
 Evidence: `artifacts/browser_wine/breed-verification-2026-09-13.json` in the
 native-port checkout. Matt reported "so far so good" and "it seems fine" during
 this verification.
+
+## Working-build handoff — 2026-09-13
+
+The served JavaScript/WASM, packaged launcher, menu DLL and real codec were
+compared against the tested build and match byte-for-byte. The packaged retail
+PE matches the owned installation, all 18 DOG files are present, and the local
+HTTP service is active. The fork's implementation is still 169b8a67; subsequent
+commits document verification only. A fresh main-session screenshot shows both
+pets in the playpen with a usable open Petz menu. Matt reports the game seems
+fine. Menu regression, decoder regression, live sound/toys, new adoption,
+save/reload and controlled startup-interruption evidence are recorded above.
+
+The additional nine-entry breed sweep is retired rather than used as a new
+product gate: five adoption choices and the saved Scottish-terrier have loaded,
+and no new breed failure was observed. Do not claim every localized menu entry
+was individually tested. The earlier desktop-driver warning remains a historical
+unreproduced observation; it is not evidence for an additional clock or driver
+patch. This handoff does not assert exhaustive coverage of every retail feature.
+Native-checkout receipt: `artifacts/browser_wine/handoff-audit-2026-09-13.json`.
