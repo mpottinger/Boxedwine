@@ -134,8 +134,9 @@ void runThreadSlice(KThread* thread) {
     cpu = thread->cpu;
     cpu->blockInstructionCount = 0;
     cpu->yield = false;
-    cpu->nextOp = cpu->getNextOp(); // another thread that just ran could have modified this
     try {
+        // Instruction fetch can itself fault; keep it inside the guest-fault boundary.
+        cpu->nextOp = cpu->getNextOp(); // another thread may have modified this
         do {
             cpu->run();
         } while ((int)cpu->blockInstructionCount < contextTimeRemaining && !cpu->yield);
