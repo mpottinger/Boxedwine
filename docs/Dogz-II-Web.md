@@ -142,3 +142,15 @@ and winex11.drv.so are present. A repeated run with the tab held visible passed
 that startup stage. Keep the tab visible during startup. Browser throttling is
 an inference from that comparison, not a recovered additional Wine defect;
 no speculative driver patch was added for it.
+
+Additional live verification on 2026-09-13 used isolated browser root
+`/dogz2-lifecycle-hidden-3`: adopted a Bouledogue through the naming and pledge
+dialogs, returned to playpen, exited, flushed IndexedDB and reloaded. The new
+`browsertest.pet` was 47,728 bytes; SHA-256 before and after reload was
+`eab359b57037106b7048ee2f21194ad7c2deedc2ddaf0e886cafd2f6d6ac2d49`.
+Restarting the game visibly loaded the adopted puppy in the playpen. This
+extends verification to new-pet creation and persistence. Evidence:
+`artifacts/browser_wine/adoption-verification-2026-09-13.json` and
+`adoption-reopened-2026-09-13.png` in the native-port checkout.
+Automated game controls used 120–180 ms presses; instantaneous clicks were
+sometimes missed by the retail polling loop. No input patch was made.
