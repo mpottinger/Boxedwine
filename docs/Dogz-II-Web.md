@@ -138,10 +138,15 @@ and ACM REGRESSION PASS respectively.
 
 A later restart while the automation tab was hidden reported Wine's generic
 "explorer process failed to start" desktop-driver warning. Both explorer.exe.so
-and winex11.drv.so are present. A repeated run with the tab held visible passed
-that startup stage. Keep the tab visible during startup. Browser throttling is
-an inference from that comparison, not a recovered additional Wine defect;
-no speculative driver patch was added for it.
+and winex11.drv.so are present. A repeated visible run passed. Controlled
+follow-up trials on 2026-09-13 held the tab hidden for 25 seconds immediately
+after Showing Window, and 133 seconds after the first interpreter loop. Both
+verified document.visibilityState was hidden and the log stayed unchanged; both
+resumed and installed the compatibility hook without an Explorer warning or
+loader timeout. The long trial visibly reached the welcome dialog. The earlier
+warning remains unreproduced; visibility is not an established cause, and no
+speculative driver or clock patch was added. The native checkout records both
+trials in artifacts/browser_wine/startup-visibility-2026-09-13.json.
 
 Additional live verification on 2026-09-13 used isolated browser root
 `/dogz2-lifecycle-hidden-3`: adopted a Bouledogue through the naming and pledge
