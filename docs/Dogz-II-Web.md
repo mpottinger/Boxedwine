@@ -159,3 +159,14 @@ extends verification to new-pet creation and persistence. Evidence:
 `adoption-reopened-2026-09-13.png` in the native-port checkout.
 Automated game controls used 120–180 ms presses; instantaneous clicks were
 sometimes missed by the retail polling loop. No input patch was made.
+
+Breed-selection verification on 2026-09-13: the retail adoption menu exposes
+nine choices from the 18 packaged DOG files. Fresh screenshots show Bouledogue,
+Bulldog, Chihuahua, Great Dane and Corniaud with their pets loaded in the
+adoption center, without another crash or decompression dialog. This is five
+observed selections, not a completed nine-entry sweep. Popup previews resize
+and reposition menu rows; the game window also changed size during automation.
+Those input observations are not established Wine defects and prompted no patch.
+Evidence: `artifacts/browser_wine/breed-verification-2026-09-13.json` in the
+native-port checkout. Matt reported "so far so good" and "it seems fine" during
+this verification.
